@@ -1,0 +1,58 @@
+<app-nav></app-nav>
+<br>
+<br>
+<div class="row">
+
+ <div class="col-md-4">
+   <br>
+  <p>Complete los campos para registrar a un alumno</p>
+  
+ </div>
+</div>
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    
+  <form>
+    <div class="form-group row">
+      <label  class="col-sm-2 col-form-label">Matricula:</label>
+      <div class="col-sm-10">
+        <input type="text"  [(ngModel)]="alumno.Matricula" [ngModelOptions]="{standalone:
+          true}" class="form-control" placeholder="Ejemplo: 128324" required>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label  class="col-sm-2 col-form-label">Nombre(s):</label>
+      <div class="col-sm-10">
+        <input type="text" [(ngModel)]="alumno.Nombres" [ngModelOptions]="{standalone:
+          true}" class="form-control" placeholder="Ejemplo: Ana Laura" >
+      </div>
+    </div>
+    <div class="form-group row">
+      <label  class="col-sm-2 col-form-label">Apellido Paterno:</label>
+      <div class="col-sm-10">
+        <input type="text" [(ngModel)]="alumno.Apellido_Paterno"  [ngModelOptions]="{standalone:
+          true}"class="form-control" placeholder="Ejemplo: Gutierrez" required>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label  class="col-sm-2 col-form-label">Apellido Materno:</label>
+      <div class="col-sm-10">
+        <input type="text" [(ngModel)]="alumno.Apellido_Materno" [ngModelOptions]="{standalone:
+          true}" class="form-control" placeholder="Ejemplo: Diaz" required >
+      </div>
+    </div>
+    <div class="form-group row">
+      <label  class="col-sm-2 col-form-label">Edad:</label>
+      <div class="col-sm-10">
+        <input type="number" [(ngModel)]="alumno.Edad" [ngModelOptions]="{standalone:
+          true}" class="form-control" required >
+      </div>
+    </div>
+    <button type="button" class="btn btn-success" (click)="altaAlumnos()"> AGREGAR </button> 
+  </form>
+</div>
+<div class="col-md-4"> </div> 
+</div>
+<app-footer></app-footer>
+ 

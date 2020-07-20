@@ -1,0 +1,59 @@
+
+<app-nav></app-nav>
+<br>
+<br>
+<!-- Page Content -->
+<div class="container">
+
+  <div class="row">
+    <div class="col-lg-3">
+
+      <h3 class="my-4">Instituto de lenguas extranjeras</h3>
+      <div class="list-group">
+        <a href="#" class="list-group-item ">Lista </a>
+          <a [routerLink]="['/registrar']" class="list-group-item ">Registrar </a> 
+         
+      </div>
+    </div>
+    <!-- /.col-lg-3 -->
+    <div class="col-lg-9">
+
+      <table class="table" *ngIf="existRegistros(); else sin">
+        <thead>
+          <tr>
+            <th scope="col">Matricula</th>
+            <th scope="col">Nombre(s)</th>
+            <th scope="col">Apellido Paterno</th>
+            <th scope="col">Apellido Materno</th>
+            <th scope="col">Edad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let alumno of alumnos">
+            <td> {{alumno.Matricula}} </td>
+            <td> {{alumno.Nombres}} </td>
+            <td> {{alumno.Apellido_Paterno}} </td>
+            <td> {{alumno.Apellido_Materno }} </td>
+            <td> {{alumno.Edad }} </td>
+            <td> <button type="button" class="btn btn-danger" (click)="bajaAlumnos(alumno.Matricula)"> Borrar </button> </td>
+            <td> <button type="button" class="btn btn-secondary" [routerLink]="['/edit',alumno.Matricula]" >Editar</button> </td>
+            <td><button type="button" class="btn btn-primary" [routerLink]="['/list',alumno.Matricula]" >Ver</button></td>
+          </tr>
+
+
+        </tbody>
+      </table>
+      
+    
+     
+    </div>
+
+    <!-- /.col-lg-9 -->
+
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->
+
+<app-footer></app-footer>
